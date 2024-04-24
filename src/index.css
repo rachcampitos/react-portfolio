@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "poppins";
+  src: url("./assets/fonts/Poppins-Regular.ttf");
+}
+
+@font-face {
+  font-family: "slab";
+  src: url("./assets/fonts/AlfaSlabOne-Regular.ttf");
+}
+
+.animation-btn-dark {
+  animation: pulse-dark 1.5s infinite;
+}
+
+.btn-active {
+  background-color: #435acb !important;
+}
+
+.icon-active {
+  color: #a4bcec;
+}
+
+.lightToast {
+  background: #f3f4f6 !important;
+  color: #1f2937 !important;
+}
+.darkToast {
+  background: #1f2937 !important;
+  color: #f3f4f6 !important;
+}
+.darkToast button.Toastify__close-button {
+  color: #f3f4f6 !important;
+}
+
+@keyframes pulse-dark {
+  0% {
+    box-shadow: 0 0 0 0 rgba(47, 55, 121, 1);
+  }
+  100% {
+    box-shadow: 0 0 0 15px rgba(47, 55, 121, 0);
+  }
+}
+
+.animation-btn {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(164, 188, 236, 1);
+  }
+  100% {
+    box-shadow: 0 0 0 15px rgba(164, 188, 236, 0);
+  }
+}
