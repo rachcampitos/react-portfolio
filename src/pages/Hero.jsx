@@ -32,7 +32,7 @@ const Hero = () => {
   return (
     <div className={darkMode ? "dark" : ""}>
       <div className="pt-12 md:py-12 px-8 sm:px-5 md:px-10 lg:px-14">
-        <h2 className="font-poppins after:absolute after:left-70 after:top-[72px] after:rounded-md dark:text-gray-100 text-5xl after:ml-8 md:after:w-40 after:w-20 after:bg-gradient-to-r from-cerulean-blue-400 to-cerulean-blue-600 after:h-[3px]">
+        <h2 className="font-poppins after:absolute after:left-70 after:top-[72px] after:rounded-md dark:text-gray-100 text-5xl after:ml-8 md:after:w-40 after:w-10 after:bg-gradient-to-r from-cerulean-blue-400 to-cerulean-blue-600 after:h-[3px]">
           About me
         </h2>
         <div className="lg:grid grid-cols-12 md:gap-10 pt-4 md:pt-[30px] items-center ">
