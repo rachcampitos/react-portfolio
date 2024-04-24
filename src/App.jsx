@@ -14,12 +14,12 @@ import Contact from "./pages/Contact";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<MainLayout />}>
+    <Route path="react-portfolio/" element={<MainLayout />}>
       <Route index element={<Hero />} />
-      <Route path="/services" element={<Services />} />
-      <Route path="/portfolio" element={<Portfolio />} />
-      <Route path="/resume" element={<Resume />} />
-      <Route path="/contact" element={<Contact />} />
+      <Route path="services" element={<Services />} />
+      <Route path="portfolio" element={<Portfolio />} />
+      <Route path="resume" element={<Resume />} />
+      <Route path="contact" element={<Contact />} />
     </Route>
   )
 );

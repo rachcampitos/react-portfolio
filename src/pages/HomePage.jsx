@@ -10,11 +10,11 @@ import { useDarkMode } from "../components/DarkModeContext";
 
 const HomePage = () => {
   const Links = [
-    { name: "Home", link: "/" },
-    { name: "Resume", link: "/resume" },
-    { name: "Services", link: "/services" },
-    { name: "Portfolio", link: "/portfolio" },
-    { name: "Contact", link: "/contact" },
+    { name: "Home", link: "/react-portfolio" },
+    { name: "Resume", link: "resume" },
+    { name: "Services", link: "services" },
+    { name: "Portfolio", link: "portfolio" },
+    { name: "Contact", link: "contact" },
   ];
   const [open, setOpen] = useState(false);
   const { darkMode, toggleDarkMode } = useDarkMode();

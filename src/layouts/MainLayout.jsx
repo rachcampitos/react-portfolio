@@ -39,28 +39,33 @@ const MainLayout = () => {
   }, []);
 
   const Links = [
-    { name: "Home", link: "/", img: AiOutlineHome, img2: AiFillHome },
+    {
+      name: "Home",
+      link: "/react-portfolio",
+      img: AiOutlineHome,
+      img2: AiFillHome,
+    },
     {
       name: "Resume",
-      link: "/resume",
+      link: "resume",
       img: AiOutlineProfile,
       img2: AiFillProfile,
     },
     {
       name: "Services",
-      link: "/services",
+      link: "services",
       img: AiOutlineFileText,
       img2: AiFillFileText,
     },
     {
       name: "Portfolio",
-      link: "/portfolio",
+      link: "portfolio",
       img: AiOutlineAppstore,
       img2: AiFillAppstore,
     },
     {
       name: "Contact",
-      link: "/contact",
+      link: "contact",
       img: AiOutlineContacts,
       img2: AiFillContacts,
     },
@@ -200,6 +205,3 @@ const MainLayout = () => {
 };
 
 export default MainLayout;
-
-/* <HomePage />
-      <Outlet /> */
