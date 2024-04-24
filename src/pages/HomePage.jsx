@@ -1,16 +1,13 @@
 import { useState, useRef } from "react";
-import Lottie from "lottie-react";
 import { Link } from "react-router-dom";
 
-import animateDark from "../assets/animations/dark-mode.json";
-
-import { HiBars3BottomRight, HiXMark } from "react-icons/hi2";
+import { HiBars3BottomRight, HiXMark, HiMoon, HiSun } from "react-icons/hi2";
 
 import { useDarkMode } from "../components/DarkModeContext";
 
 const HomePage = () => {
   const Links = [
-    { name: "Home", link: "/react-portfolio" },
+    { name: "Home", link: "/react-portfolio/" },
     { name: "Resume", link: "resume" },
     { name: "Services", link: "services" },
     { name: "Portfolio", link: "portfolio" },
@@ -18,8 +15,6 @@ const HomePage = () => {
   ];
   const [open, setOpen] = useState(false);
   const { darkMode, toggleDarkMode } = useDarkMode();
-
-  const darkRef = useRef();
 
   return (
     <div className={darkMode ? "dark" : ""}>
@@ -31,15 +26,34 @@ const HomePage = () => {
                 R
               </span>
             </div>
-            <div
-              onClick={() => setOpen(!open)}
-              className="absolute right-8 top-6 cursor-pointer md:hidden w-7 h-7 dark:text-gray-200 text-gray-700"
-            >
-              {open ? <HiXMark /> : <HiBars3BottomRight />}
+            <div className="flex absolute right-14 md:right-10 top-6 cursor-pointer w-7 h-7 dark:text-gray-200 text-gray-700">
+              <div
+                onClick={() => setOpen(!open)}
+                className="md:hidden text-2xl mr-4"
+              >
+                {open ? <HiXMark /> : <HiBars3BottomRight />}
+              </div>
+              <div>
+                {darkMode ? (
+                  <HiSun
+                    className="w-6 h-6 text-[#FFBB70] cursor-pointer"
+                    onClick={() => {
+                      toggleDarkMode(toggleDarkMode);
+                    }}
+                  />
+                ) : (
+                  <HiMoon
+                    className="w-6 h-6 text-[#5BBCFF] cursor-pointer"
+                    onClick={() => {
+                      toggleDarkMode(toggleDarkMode);
+                    }}
+                  />
+                )}
+              </div>
             </div>
             <ul
               className={`md:hidden mt-4 absolute bg-white z-[-1] left-0 w-full dark:bg-gray-800 transition-all duration-500 md:duration-150 ease-in ${
-                open ? "top-12" : "top-[-490px]"
+                open ? "top-13" : "top-[-490px]"
               }`}
             >
               {Links.map((link, index) => (
@@ -56,39 +70,7 @@ const HomePage = () => {
                   </Link>
                 </li>
               ))}
-              <li className="group px-7 py-5 font-poppins dark:hover:bg-gray-600 transition ease-in">
-                <Lottie
-                  lottieRef={darkRef}
-                  animationData={animateDark}
-                  className="w-14 cursor-pointer md:ml-6"
-                  loop={false}
-                  autoplay={false}
-                  onClick={() => {
-                    toggleDarkMode(toggleDarkMode);
-                    darkRef.current.setSpeed(3);
-                    !darkMode
-                      ? darkRef.current.playSegments([35, 200], true)
-                      : darkRef.current.playSegments([300, 480], true);
-                    setOpen(!open);
-                  }}
-                />
-              </li>
             </ul>
-            <Lottie
-              lottieRef={darkRef}
-              animationData={animateDark}
-              className="w-14 cursor-pointer md:ml-6 md:block hidden"
-              loop={false}
-              autoplay={false}
-              onClick={() => {
-                toggleDarkMode(toggleDarkMode);
-                darkRef.current.setSpeed(3);
-                !darkMode
-                  ? darkRef.current.playSegments([35, 200], true)
-                  : darkRef.current.playSegments([300, 480], true);
-                setOpen(!open);
-              }}
-            />
           </div>
         </div>
       </section>

@@ -38,13 +38,14 @@ const MainLayout = () => {
     Aos.init({ duration: 2000 });
   }, []);
 
+  const HomeLink = {
+    name: "Home",
+    link: "/react-portfolio/",
+    img: AiOutlineHome,
+    img2: AiFillHome,
+  };
+
   const Links = [
-    {
-      name: "Home",
-      link: "/react-portfolio",
-      img: AiOutlineHome,
-      img2: AiFillHome,
-    },
     {
       name: "Resume",
       link: "resume",
@@ -161,17 +162,34 @@ const MainLayout = () => {
               <header className="lg:w-[526px] h-[144px] hidden lg:block p-[30px] ml-auto mb-10 rounded-[16px] bg-gray-100 dark:bg-gray-900 ">
                 <nav className="hidden lg:block">
                   <ul className="flex">
+                    <Link
+                      to={HomeLink.link}
+                      className={`group text-xs w-full h-20 rounded-md cursor-pointer font-poppins bg-gray-200 mx-2.5 text-xtiny justify-center flex flex-col items-center transition-all duration-300 ease-in-out dark:bg-gray-800 hover:text-cerulean-blue-50 dark:hover:text-gray-200 hover:bg-cerulean-blue-600 dark:hover:bg-cerulean-blue-600 ${
+                        location.pathname === `/react-portfolio/`
+                          ? "btn-active lg:dark:text-gray-100 text-white transition ease-in"
+                          : "text-gray-500 dark:text-gray-100 "
+                      }`}
+                    >
+                      {location.pathname === `/react-portfolio/`
+                        ? React.createElement(HomeLink.img2, {
+                            className: `text-2xl mb-1 icon-active`,
+                          })
+                        : React.createElement(HomeLink.img, {
+                            className: `text-2xl mb-1 group-hover:text-cerulean-blue-300 text-cerulean-blue-400`,
+                          })}
+                      {HomeLink.name}
+                    </Link>
                     {Links.map((link, index) => (
                       <Link
                         key={index}
                         to={link.link}
                         className={`group text-xs w-full h-20 rounded-md cursor-pointer font-poppins bg-gray-200 mx-2.5 text-xtiny justify-center flex flex-col items-center transition-all duration-300 ease-in-out dark:bg-gray-800 hover:text-cerulean-blue-50 dark:hover:text-gray-200 hover:bg-cerulean-blue-600 dark:hover:bg-cerulean-blue-600 ${
-                          location.pathname === link.link
+                          location.pathname === `/react-portfolio/${link.link}`
                             ? "btn-active lg:dark:text-gray-100 text-white transition ease-in"
                             : "text-gray-500 dark:text-gray-100 "
                         }`}
                       >
-                        {location.pathname === link.link
+                        {location.pathname === `/react-portfolio/${link.link}`
                           ? React.createElement(link.img2, {
                               className: `text-2xl mb-1 icon-active`,
                             })

@@ -28,7 +28,7 @@ const Resume = () => {
     <div className={darkMode ? "dark" : ""}>
       <div className="container px-4 sm:px-5 md:px-10 lg:px-14">
         <div className="py-12">
-          <h2 className="font-poppins after:absolute after:left-70 after:top-[72px] after:rounded-md dark:text-gray-100 text-5xl after:ml-8 md:after:w-40 after:w-32 after:bg-gradient-to-r from-cerulean-blue-400 to-cerulean-blue-600 after:h-[3px]">
+          <h2 className="font-poppins after:absolute after:left-70 after:top-[72px] after:rounded-md dark:text-gray-100 text-5xl after:ml-8 md:after:w-40 after:w-20 after:bg-gradient-to-r from-cerulean-blue-400 to-cerulean-blue-600 after:h-[3px]">
             Resume
           </h2>
           <div className="flex my-8 justify-start">
@@ -36,7 +36,7 @@ const Resume = () => {
               onClick={() => {
                 setEducation(!education), setExperience(false);
               }}
-              className={`flex text-2xl mr-20 group p-4 rounded-md transition ease-in ${
+              className={`flex text-lg md:text-2xl mr-4 md:mr-20 group p-4 rounded-md transition ease-in ${
                 education
                   ? "bg-cerulean-blue-600 text-gray-100"
                   : `${
@@ -45,7 +45,7 @@ const Resume = () => {
               }  dark:text-gray-300 hover:text-gray-100 hover:bg-cerulean-blue-600`}
             >
               <PiCertificate
-                className={`text-cerulean-blue-600 text-3xl mr-2 relative top-1 ${
+                className={`text-cerulean-blue-600 text-2xl md:text-2xl mr-2 relative top-1 ${
                   education ? "icon-active" : ""
                 } group-hover:text-cerulean-blue-400`}
               />{" "}
@@ -55,7 +55,7 @@ const Resume = () => {
               onClick={() => {
                 setExperience(!experience), setEducation(false);
               }}
-              className={`flex text-2xl mr-20 group p-4 rounded-md transition ease-in duration-300 ${
+              className={`flex text-lg md:text-2xl group p-4 rounded-md transition ease-in duration-300 ${
                 experience
                   ? "bg-cerulean-blue-600 text-gray-100"
                   : `${
@@ -64,7 +64,7 @@ const Resume = () => {
               } dark:text-gray-300 hover:bg-cerulean-blue-600 hover:text-gray-100`}
             >
               <PiCodeBlock
-                className={`text-cerulean-blue-600 text-3xl mr-2 relative top-1 ${
+                className={`text-cerulean-blue-600 text-2xl mr-2 relative top-1 ${
                   experience ? "icon-active" : ""
                 } group-hover:text-cerulean-blue-300`}
               />{" "}

@@ -32,7 +32,7 @@ const Hero = () => {
   return (
     <div className={darkMode ? "dark" : ""}>
       <div className="pt-12 md:py-12 px-8 sm:px-5 md:px-10 lg:px-14">
-        <h2 className="font-poppins after:absolute after:left-70 after:top-[72px] after:rounded-md dark:text-gray-100 text-5xl after:ml-8 md:after:w-40 after:w-32 after:bg-gradient-to-r from-cerulean-blue-400 to-cerulean-blue-600 after:h-[3px]">
+        <h2 className="font-poppins after:absolute after:left-70 after:top-[72px] after:rounded-md dark:text-gray-100 text-5xl after:ml-8 md:after:w-40 after:w-20 after:bg-gradient-to-r from-cerulean-blue-400 to-cerulean-blue-600 after:h-[3px]">
           About me
         </h2>
         <div className="lg:grid grid-cols-12 md:gap-10 pt-4 md:pt-[30px] items-center ">
@@ -71,38 +71,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
-{
-  /*       <div
-        className={
-          "px-10 py-32 mt-16 flex flex-col md:flex-row md:justify-between lg:justify-evenly dark:bg-gray-900 transition ease-in"
-        }
-      >
-        <div className="flex justify-center align-middle">
-          <div className="text-3xl mr-14 flex flex-col justify-center align-middle gap-8 py-3 text-cyan-500">
-            <AiFillGithub />
-            <AiFillLinkedin />
-            <AiFillDribbbleCircle />
-          </div>
-          <div className="flex flex-col justify-center md:mr-6">
-            <h2 className="text-5xl text-cyan-500 font-medium md:text-6xl">
-              Hi, I'm Raul
-            </h2>
-            <h3 className="text-2xl py-2 font-medium text-gray-600 font-poppins md:text-3xl dark:text-gray-500">
-              Web UI Developer
-            </h3>
-            <p className="max-w-xl text-md py-5 leading-6 text-gray-800 w-80 font-poppins md:text-xl dark:text-gray-300">
-              Dynamic and results-driven Web Developer with 5 years of
-              experience in front-end development. Proficient in JavaScript,
-              Angular 9+, HTML, CSS, Ionic, and Material Design. Demonstrated
-              ability to collaborate effectively in team environments, and drive
-              successful outcomes.
-            </p>
-          </div>
-        </div>
-
-        <div className="mt-10 relative mx-auto md:mx-0 md:mt-16 bg-gradient-to-b from-cyan-400 to-teal-500 rounded-full w-64 h-64 overflow-hidden">
-          <img src={raul} alt="" className="object-fill relative bottom-20" />
-        </div>
-      </div> */
-}

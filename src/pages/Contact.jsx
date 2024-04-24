@@ -45,7 +45,7 @@ const Contact = () => {
     <div className={darkMode ? "dark" : ""}>
       <div className="container px-4 sm:px-5 md:px-10 lg:px-14">
         <div className="md:py-12 pt-12">
-          <h2 className="font-poppins after:absolute after:left-70 after:top-[72px] after:rounded-md dark:text-gray-100 text-5xl after:ml-8 md:after:w-40 after:w-32 after:bg-gradient-to-r from-cerulean-blue-400 to-cerulean-blue-600 after:h-[3px]">
+          <h2 className="font-poppins after:absolute after:left-70 after:top-[72px] after:rounded-md dark:text-gray-100 text-5xl after:ml-8 md:after:w-40 after:w-20 after:bg-gradient-to-r from-cerulean-blue-400 to-cerulean-blue-600 after:h-[3px]">
             Contact
           </h2>
         </div>
