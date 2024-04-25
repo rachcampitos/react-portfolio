@@ -7,19 +7,21 @@ import {
 
 import MainLayout from "./layouts/MainLayout";
 import Hero from "./pages/Hero";
-import Services from "./pages/Services";
-import Resume from "./pages/Resume";
 import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
+import Skills from "./pages/Skills";
+import Career from "./pages/Career";
+import NotFoundPage from "./pages/NotFoundPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="react-portfolio/" element={<MainLayout />}>
       <Route index element={<Hero />} />
-      <Route path="services" element={<Services />} />
+      <Route path="skills" element={<Skills />} />
       <Route path="portfolio" element={<Portfolio />} />
-      <Route path="resume" element={<Resume />} />
+      <Route path="career" element={<Career />} />
       <Route path="contact" element={<Contact />} />
+      <Route path="*" element={<NotFoundPage />} />
     </Route>
   )
 );

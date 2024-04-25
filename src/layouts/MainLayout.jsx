@@ -1,9 +1,8 @@
-import { Outlet } from "react-router-dom";
 import HomePage from "../pages/HomePage";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import raul from "../assets/images/raul.png";
 import resume from "../assets/files/Resume.pdf";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, Outlet } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -32,7 +31,16 @@ import {
 import { useDarkMode } from "../components/DarkModeContext";
 
 const MainLayout = () => {
+  const outletRef = useRef();
+
   const location = useLocation();
+
+  const handleScrollToAbout = () => {
+    if (outletRef.current) {
+      console.log("ref", outletRef);
+      outletRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   useEffect(() => {
     Aos.init({ duration: 2000 });
@@ -47,14 +55,14 @@ const MainLayout = () => {
 
   const Links = [
     {
-      name: "Resume",
-      link: "resume",
+      name: "Career",
+      link: "career",
       img: AiOutlineProfile,
       img2: AiFillProfile,
     },
     {
-      name: "Services",
-      link: "services",
+      name: "Skills",
+      link: "skills",
       img: AiOutlineFileText,
       img2: AiFillFileText,
     },
@@ -75,7 +83,7 @@ const MainLayout = () => {
   return (
     <>
       <div className={darkMode ? "dark" : ""}>
-        <HomePage />
+        <HomePage scrollToSection={handleScrollToAbout} />
         <ToastContainer
           toastClassName={darkMode ? "darkToast" : "lightToast"}
         />
@@ -203,7 +211,7 @@ const MainLayout = () => {
                 </nav>
               </header>
               <div className="rounded-2xl bg-gray-100 dark:bg-gray-900 my-16">
-                <div data-aos="fade-in">
+                <div data-aos="fade-in" id="outlet" ref={outletRef}>
                   <Outlet />
                   <footer className="overflow-hidden rounded-b-2xl bg-gray-300 dark:bg-gray-950">
                     <div className="container">

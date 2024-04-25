@@ -1,15 +1,15 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { HiBars3BottomRight, HiXMark, HiMoon, HiSun } from "react-icons/hi2";
 
 import { useDarkMode } from "../components/DarkModeContext";
 
-const HomePage = () => {
+const HomePage = ({ scrollToSection }) => {
   const Links = [
     { name: "Home", link: "/react-portfolio/" },
-    { name: "Resume", link: "resume" },
-    { name: "Services", link: "services" },
+    { name: "Career", link: "career" },
+    { name: "Skills", link: "skills" },
     { name: "Portfolio", link: "portfolio" },
     { name: "Contact", link: "contact" },
   ];
@@ -59,7 +59,9 @@ const HomePage = () => {
               {Links.map((link, index) => (
                 <li
                   key={index}
-                  onClick={() => setOpen(!open)}
+                  onClick={() => {
+                    setOpen(!open);
+                  }}
                   className="group cursor-pointer px-7 py-5 font-poppins hover:bg-gray-200 dark:hover:bg-gray-700 transition ease-in"
                 >
                   <Link
