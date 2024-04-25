@@ -37,7 +37,6 @@ const MainLayout = () => {
 
   const handleScrollToAbout = () => {
     if (outletRef.current) {
-      console.log("ref", outletRef);
       outletRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
