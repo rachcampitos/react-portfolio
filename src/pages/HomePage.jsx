@@ -61,6 +61,7 @@ const HomePage = ({ scrollToSection }) => {
                   key={index}
                   onClick={() => {
                     setOpen(!open);
+                    scrollToSection();
                   }}
                   className="group cursor-pointer px-7 py-5 font-poppins hover:bg-gray-200 dark:hover:bg-gray-700 transition ease-in"
                 >
