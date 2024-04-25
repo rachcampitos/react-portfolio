@@ -1,5 +1,5 @@
 import HomePage from "../pages/HomePage";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import raul from "../assets/images/raul.png";
 import resume from "../assets/files/Resume.pdf";
 import { Link, useLocation, Outlet } from "react-router-dom";
@@ -21,6 +21,7 @@ import {
   AiFillContacts,
   AiFillProfile,
   AiFillAppstore,
+  AiOutlineArrowUp,
 } from "react-icons/ai";
 import {
   FaPhone,
@@ -44,6 +45,28 @@ const MainLayout = () => {
   useEffect(() => {
     Aos.init({ duration: 2000 });
   }, []);
+
+  const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset > 300) {
+        setShowButton(true);
+      } else {
+        setShowButton(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const HomeLink = {
     name: "Home",
@@ -209,8 +232,11 @@ const MainLayout = () => {
                   </ul>
                 </nav>
               </header>
-              <div className="rounded-2xl bg-gray-100 dark:bg-gray-900 my-16">
-                <div data-aos="fade-in" id="outlet" ref={outletRef}>
+              <div
+                className="rounded-2xl bg-gray-100 dark:bg-gray-900 my-16"
+                ref={outletRef}
+              >
+                <div data-aos="fade-in" id="outlet">
                   <Outlet />
                   <footer className="overflow-hidden rounded-b-2xl bg-gray-300 dark:bg-gray-950">
                     <div className="container">
@@ -221,6 +247,14 @@ const MainLayout = () => {
                   </footer>
                 </div>
               </div>
+              {showButton && (
+                <button
+                  onClick={scrollToTop}
+                  className="fixed bottom-4 right-4 bg-cerulean-blue-600 hover:bg-cerulean-blue-800 text-white font-bold p-3 rounded-lg transition ease-in"
+                >
+                  <AiOutlineArrowUp />
+                </button>
+              )}
             </div>
           </div>
         </div>
